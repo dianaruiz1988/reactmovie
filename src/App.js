@@ -1,25 +1,71 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import {useState, useEffect} from "react";
+// WE IMPORT OUR COMPONENTS
+import MovieDisplay from "./components/MovieDisplay";
+import Form from "./components/Form";
+
+export default function App() {
+  //variable with your apiKey
+  const apiKey = "98e3fb1f";
+
+  //State to hold movie data
+  const [movie, setMovie] = useState(null);
+
+
+  //Function to getMovies
+  //this function below is the prop "moviesearch
+  // getting movie is same as searching for the movoe"
+
+  //what- action 
+  const getMovie = async (searchTerm) => {
+    // make fetch request and store response
+    try {
+      const response = await fetch (
+        `http://www.omdbapi.com/?apikey=${apiKey}&t=${searchTerm}`
+      );
+
+      //json creates an on object of the data 
+
+// async = promise, uber eats example.
+
+    // Parse JSON response into a javascript object
+    const data = await response.json();
+    //set the Movie state to the movie
+    setMovie(data);
+    console.log(movie)
+  } catch (e){
+    console.error(e)
+  }
+  };
+
+
+
+  //what is a JSON reponse
+
+
+//This will run on the first render but not on subsquent renders
+// useffect once upon the page loads- 
+useEffect(() => {
+  getMovie("Clueless");
+}, []);
+
+//Attempt at bonus
+// useEffect(() => {
+//   getMovie(Math.floor(Math.random  * {movie});
+// }, []);
+
+  // USE OUR COMPONENTS IN APPs RETURNED JSX
+  // We pass the getMovie function as a prop called moviesearch
+   // We pass movie as props to movie display
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p className="Title">OMBDB</p>
+      <Form moviesearch={getMovie} />
+      <MovieDisplay movie={movie}/>
     </div>
   );
 }
 
-export default App;
+//how - 
