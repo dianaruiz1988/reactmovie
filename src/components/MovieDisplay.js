@@ -13,7 +13,7 @@ export default function  MovieDisplay ({ movie }){
           <img src={movie.Poster} alt={movie.Title}/>
         <div className="container">
           <h4><b>{movie.Genre}</b></h4>
-          <p>Architect & Engineer</p>
+          <p>{movie.Rated}</p>
         </div> 
       </div>
       </>

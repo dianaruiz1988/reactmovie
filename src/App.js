@@ -38,11 +38,6 @@ export default function App() {
   }
   };
 
-
-
-  //what is a JSON reponse
-
-
 //This will run on the first render but not on subsquent renders
 // useffect once upon the page loads- 
 useEffect(() => {
@@ -68,4 +63,4 @@ useEffect(() => {
   );
 }
 
-//how - 
+//this code is really messy...but i am trying to get caught up

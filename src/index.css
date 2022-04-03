@@ -6,7 +6,7 @@
   width: 100%;
   height: 100vh;
   border: solid blue 5px;
-
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #a6aeb5);
 }
 
 body {
@@ -18,6 +18,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: brown;
   border: solid blue 5px;
+  align-items:center;
+  justify-content:center;
 }
 
 code {
@@ -29,9 +31,13 @@ code {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 50%;
-  border:solid orange
-
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 5px; /* 5px rounded corners */
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
 }
 
 /* On mouse-over, add a deeper shadow */
