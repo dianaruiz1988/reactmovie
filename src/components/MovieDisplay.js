@@ -14,6 +14,7 @@ export default function  MovieDisplay ({ movie }){
         <div className="container">
           <h4><b>{movie.Genre}</b></h4>
           <p>{movie.Rated}</p>
+          <p>{movie.Year}</p>
         </div> 
       </div>
       </>
